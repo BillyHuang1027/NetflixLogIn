@@ -1,24 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18092"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NetflixLogIn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Netflix" translatesAutoresizingMaskIntoConstraints="NO" id="Fc7-MD-0A4">
+                                <rect key="frame" x="16" y="44" width="118" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="YD1-aX-NTs"/>
+                                    <constraint firstAttribute="height" constant="47" id="xMn-BL-NMo"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZE-eS-s6g">
+                                <rect key="frame" x="16" y="701" width="343" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="mvh-P9-Y6Y">
+                                <rect key="frame" x="136.33333333333334" y="659" width="102.33333333333334" height="26.333333333333371"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <action selector="changePage:" destination="BYZ-38-t0r" eventType="valueChanged" id="wmf-V5-kY4"/>
+                                </connections>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zT-2l-zLL">
+                                <rect key="frame" x="0.0" y="125" width="375" height="526"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GqG-LL-1Ck">
+                                        <rect key="frame" x="0.0" y="0.0" width="750" height="526"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZD-aY-Gnb">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="526"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Page1" translatesAutoresizingMaskIntoConstraints="NO" id="riO-eV-uqx">
+                                                        <rect key="frame" x="30" y="41" width="316" height="263"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Watch On Any Device" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aky-eW-cRE">
+                                                        <rect key="frame" x="49" y="352" width="280" height="36"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zK-pL-1TG">
+                                                <rect key="frame" x="375" y="0.0" width="375" height="526"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Page2" translatesAutoresizingMaskIntoConstraints="NO" id="LkF-Az-zdF">
+                                                        <rect key="frame" x="72" y="41" width="231" height="263"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3, 2, 1 ... Download" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPu-LX-20U">
+                                                        <rect key="frame" x="69" y="349" width="236" height="36"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PvG-9p-ApS" firstAttribute="height" secondItem="6zK-pL-1TG" secondAttribute="height" id="0Go-14-a8S"/>
+                                    <constraint firstItem="GqG-LL-1Ck" firstAttribute="trailing" secondItem="Khv-yi-iIS" secondAttribute="trailing" id="Syv-cL-f0K"/>
+                                    <constraint firstAttribute="height" constant="526" id="Y0X-NN-ku3"/>
+                                    <constraint firstItem="uZD-aY-Gnb" firstAttribute="height" secondItem="PvG-9p-ApS" secondAttribute="height" id="bYf-Rx-giL"/>
+                                    <constraint firstItem="PvG-9p-ApS" firstAttribute="width" secondItem="6zK-pL-1TG" secondAttribute="width" id="f9K-lj-BQS"/>
+                                    <constraint firstItem="uZD-aY-Gnb" firstAttribute="width" secondItem="PvG-9p-ApS" secondAttribute="width" id="nzE-La-lYN"/>
+                                    <constraint firstItem="GqG-LL-1Ck" firstAttribute="leading" secondItem="Khv-yi-iIS" secondAttribute="leading" id="q8f-Qo-3Ee"/>
+                                    <constraint firstItem="GqG-LL-1Ck" firstAttribute="top" secondItem="Khv-yi-iIS" secondAttribute="top" id="uKt-Cu-v4I"/>
+                                    <constraint firstItem="GqG-LL-1Ck" firstAttribute="bottom" secondItem="Khv-yi-iIS" secondAttribute="bottom" id="zvQ-ZW-taj"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Khv-yi-iIS"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="PvG-9p-ApS"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="VzY-r2-lPa"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Fc7-MD-0A4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="OZO-JM-iQa"/>
+                            <constraint firstItem="5zT-2l-zLL" firstAttribute="top" secondItem="Fc7-MD-0A4" secondAttribute="bottom" constant="34" id="Tew-4o-iN5"/>
+                            <constraint firstItem="Fc7-MD-0A4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="X1X-zo-Wns"/>
+                            <constraint firstItem="mvh-P9-Y6Y" firstAttribute="top" secondItem="5zT-2l-zLL" secondAttribute="bottom" constant="8" symbolic="YES" id="XNn-lc-8uL"/>
+                            <constraint firstItem="5zT-2l-zLL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="okj-zB-EFg"/>
+                            <constraint firstItem="mvh-P9-Y6Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="un7-lf-Z13"/>
+                            <constraint firstAttribute="trailing" secondItem="5zT-2l-zLL" secondAttribute="trailing" id="zFc-vy-lxk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="mvh-P9-Y6Y" id="Qdd-jb-vJe"/>
+                        <outlet property="scrollView" destination="5zT-2l-zLL" id="Skb-xt-Ymo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="44" y="71.674876847290648"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Netflix" width="746" height="497"/>
+        <image name="Page1" width="900" height="758"/>
+        <image name="Page2" width="756" height="832"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
